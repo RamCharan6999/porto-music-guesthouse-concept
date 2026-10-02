@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Porto Music Guest House — Concept Redesign</title>
+<meta name="description" content="Concept redesign for Porto Music Guest House in Porto, Portugal.">
+<style>
+:root{
+  --charcoal:#17191d;--ink:#22262b;--paper:#f3efe8;--white:#fffdf8;--cork:#c8a46b;
+  --wine:#7c3340;--mist:#e4e7e5;--line:rgba(34,38,43,.16)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}img{display:block;width:100%}
+.concept{background:#101216;color:#e9e7e2;text-align:center;padding:9px 16px;font-size:10px;text-transform:uppercase;letter-spacing:.16em}
+.nav{position:absolute;top:31px;left:0;right:0;height:80px;z-index:6;color:white;padding:0 clamp(24px,6vw,96px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid rgba(255,255,255,.23)}
+.logo{font:29px Georgia,'Times New Roman',serif}.logo span{font:9px Arial,sans-serif;text-transform:uppercase;letter-spacing:.21em;margin-left:8px;opacity:.7}
+.links{display:flex;gap:30px;font-size:10px;text-transform:uppercase;letter-spacing:.14em}.nav-cta{justify-self:end;border:1px solid rgba(255,255,255,.55);padding:12px 17px;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.hero{position:relative;min-height:94vh;color:white;display:flex;align-items:flex-end;overflow:hidden}.hero>img{position:absolute;inset:0;height:100%;object-fit:cover}
+.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,20,24,.84),rgba(18,20,24,.14) 72%),linear-gradient(0deg,rgba(18,20,24,.77),transparent 45%)}
+.hero-copy{position:relative;z-index:2;margin:0 0 128px clamp(24px,8vw,130px);max-width:840px}.eyebrow,.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.21em;font-weight:700}.eyebrow{color:#e7c89a;margin-bottom:25px}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;margin:0}h1{font-size:clamp(62px,8vw,118px);line-height:.9;letter-spacing:-.05em}.hero-copy p{font-size:17px;line-height:1.7;max-width:620px;color:rgba(255,255,255,.82);margin:29px 0}
+.actions{display:flex;gap:24px;align-items:center}.button{display:inline-flex;padding:15px 20px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}.button.light{background:var(--white);color:var(--charcoal)}.button.dark{background:var(--charcoal);color:white}.button.outline{border:1px solid var(--charcoal)}.ghost{font-size:11px;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:6px}
+.factbar{position:absolute;z-index:2;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(4,1fr);padding:0 clamp(24px,8vw,130px);background:rgba(24,26,30,.67);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.19)}
+.factbar div{padding:22px 24px;border-right:1px solid rgba(255,255,255,.15)}.factbar div:first-child{padding-left:0}.factbar strong{display:block;font:29px Georgia,serif}.factbar span{display:block;margin-top:5px;font-size:9px;text-transform:uppercase;letter-spacing:.13em;color:rgba(255,255,255,.62)}
+
+.section{padding:clamp(82px,10vw,150px) clamp(24px,8vw,130px)}.kicker{color:var(--wine);margin-bottom:27px}
+.story{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(52px,8vw,120px);align-items:center}.story h2,.rooms h2,.architecture h2,.contact h2{font-size:clamp(46px,5.5vw,80px);line-height:.97;letter-spacing:-.04em}.story p,.architecture p{font-size:15px;line-height:1.8;color:#656b6c;margin:28px 0}.story img{aspect-ratio:4/3;object-fit:cover}
+.features{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin-top:34px}.feature{padding:14px 0;border-bottom:1px solid var(--line);font-size:11px;text-transform:uppercase;letter-spacing:.08em}.feature:before{content:'—';color:var(--wine);margin-right:9px}
+
+.rooms{background:var(--mist)}.rooms-head{display:grid;grid-template-columns:1fr 390px;gap:50px;align-items:end;margin-bottom:48px}.rooms-head p{font-size:14px;line-height:1.75;color:#656d70}
+.type-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:58px}.type{background:var(--white);padding:26px;min-height:270px;display:flex;flex-direction:column}.type span{font-size:9px;color:var(--wine);letter-spacing:.15em}.type h3{font-size:25px;line-height:1.05;margin-top:auto;margin-bottom:12px}.type p{font-size:11px;line-height:1.55;color:#687073;margin:0}
+.gallery{display:grid;grid-template-columns:1.25fr .75fr .75fr;grid-template-rows:280px 280px;gap:13px}.gallery figure{margin:0;position:relative;overflow:hidden}.gallery figure:first-child{grid-row:1/3}.gallery img{height:100%;object-fit:cover}.gallery figcaption{position:absolute;left:15px;bottom:14px;background:rgba(255,253,248,.9);padding:8px 11px;font-size:9px;text-transform:uppercase;letter-spacing:.12em}
+.gallery-note{margin-top:16px;font-size:11px;color:#667074}
+
+.breakfast{display:grid;grid-template-columns:1.08fr .92fr;background:var(--charcoal);color:#fff}.breakfast img{height:100%;min-height:620px;object-fit:cover}.breakfast-copy{padding:clamp(64px,8vw,120px);display:flex;flex-direction:column;justify-content:center}.breakfast-copy .kicker{color:#e9c89a}.breakfast-copy h2{font-size:clamp(50px,6vw,88px);line-height:.94}.breakfast-copy p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.72);margin:28px 0;max-width:480px}
+.breakfast-list{border-top:1px solid rgba(255,255,255,.18);margin-top:8px}.breakfast-list div{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+
+.architecture{background:#eee1cd}.architecture-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(52px,8vw,120px);align-items:center}.architecture-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.architecture-grid img:first-child{grid-column:1/-1;aspect-ratio:16/10;object-fit:cover}.architecture-grid img:not(:first-child){aspect-ratio:1/1;object-fit:cover}.architecture-note{border-left:2px solid var(--wine);padding-left:20px;font:20px/1.55 Georgia,serif;color:#43484a}
+
+.location{position:relative;min-height:82vh;color:#fff;display:flex;align-items:flex-end}.location>img{position:absolute;inset:0;height:100%;object-fit:cover}.location:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,20,24,.84),rgba(18,20,24,.08) 68%)}
+.location-copy{position:relative;z-index:2;padding:0 clamp(24px,8vw,130px) clamp(72px,8vw,120px);max-width:900px}.location-copy .kicker{color:#e9c89a}.location-copy h2{font-size:clamp(56px,7vw,100px);line-height:.93}.location-copy p{max-width:570px;line-height:1.7;color:rgba(255,255,255,.82)}
+
+.proof{text-align:center;background:#e9d8b7}.score{font:clamp(110px,16vw,220px)/.88 Georgia,serif;color:var(--wine);letter-spacing:-.06em}.score small{font-size:.19em;color:#767a78}.proof h2{font-size:clamp(36px,4.5vw,64px);max-width:920px;margin:32px auto 55px}.proof-grid{max-width:960px;margin:auto;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}.proof-grid div{padding:25px;border-right:1px solid var(--line)}.proof-grid div:last-child{border-right:0}.proof-grid strong{display:block;font:28px Georgia,serif}.proof-grid span{display:block;margin-top:7px;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#6e7473}
+
+.contact-card{display:grid;grid-template-columns:1fr 1fr;gap:80px;padding:60px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.details{align-self:end}.detail{margin-bottom:24px}.detail span{display:block;color:var(--wine);font-size:9px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:7px}.detail p{font:20px/1.5 Georgia,serif;margin:0}.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+footer{background:#111317;color:rgba(255,255,255,.68);padding:50px clamp(24px,8vw,130px);display:grid;grid-template-columns:1fr 2fr auto;gap:40px}.footer-logo{font:29px Georgia,serif;color:#fff}footer p{font-size:11px;line-height:1.6;margin:0}footer>a{font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+
+@media(max-width:1000px){
+.links{display:none}.nav{grid-template-columns:1fr auto}.story,.breakfast,.architecture-wrap,.contact-card{grid-template-columns:1fr}.rooms-head{grid-template-columns:1fr}.type-grid{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto}.gallery figure,.gallery figure:first-child{grid-row:auto;aspect-ratio:4/3}.breakfast img{min-height:420px}.proof-grid{grid-template-columns:1fr 1fr}footer{grid-template-columns:1fr}}
+@media(max-width:600px){
+.logo{font-size:20px}.logo span{display:none}.nav-cta{font-size:9px;padding:10px 11px}.hero{min-height:900px}.hero-copy{margin-left:24px;margin-right:24px;margin-bottom:245px}.hero-copy h1{font-size:57px}.hero-copy p{font-size:15px}.factbar{grid-template-columns:1fr 1fr;padding:0 24px}.factbar div{padding:14px 10px}.section{padding:80px 24px}.features,.type-grid,.proof-grid{grid-template-columns:1fr}.type{min-height:210px}.gallery{grid-template-columns:1fr}.breakfast-copy{padding:70px 24px}.architecture-grid{grid-template-columns:1fr}.architecture-grid img:first-child{grid-column:auto}.location-copy{padding:0 24px 70px}.actions{flex-direction:column;align-items:flex-start}.contact-card{gap:40px}}
+</style>
+</head>
+<body>
+<div class="concept">Concept redesign · not the official Porto Music Guest House website</div>
+
+<header class="nav">
+<a class="logo" href="#top">Porto Music <span>Guest House · Boavista</span></a>
+<nav class="links"><a href="#house">The house</a><a href="#rooms">Rooms</a><a href="#breakfast">Breakfast</a><a href="#contact">Contact</a></nav>
+<a class="nav-cta" href="mailto:info@portomusicguesthouse.com?subject=Availability%20at%20Porto%20Music%20Guest%20House">Ask availability ↗</a>
+</header>
+
+<section class="hero" id="top">
+<img src="images/site/hero.jpg" alt="Courtyard at Porto Music Guest House">
+<div class="hero-copy">
+<div class="eyebrow">Boavista · Porto · Portugal</div>
+<h1>A quieter rhythm<br>in Porto.</h1>
+<p>A restored century-old Porto house with seven rooms, thoughtful design and Casa da Música directly across the avenue.</p>
+<div class="actions"><a class="button light" href="mailto:info@portomusicguesthouse.com?subject=Availability%20at%20Porto%20Music%20Guest%20House">Ask availability ↗</a><a class="ghost" href="#house">Discover the house ↓</a></div>
+</div>
+<div class="factbar">
+<div><strong>9.1</strong><span>Booking guest score</span></div>
+<div><strong>423</strong><span>Booking reviews</span></div>
+<div><strong>9.7</strong><span>Staff score</span></div>
+<div><strong>7</strong><span>Accommodation units</span></div>
+</div>
+</section>
+
+<section class="section story" id="house">
+<div>
+<div class="kicker">01 · Porto Music</div>
+<h2>Old Porto shell.<br>Modern inside.</h2>
+<p>Porto Music Guest House occupies a traditional century-old house on Avenida da Boavista. The building was restored for hospitality while preserving architectural character, then paired with a clean, contemporary interior.</p>
+<div class="features">
+<div class="feature">Private bathrooms</div><div class="feature">Air conditioning</div>
+<div class="feature">Free Wi-Fi</div><div class="feature">Garden & courtyard</div>
+<div class="feature">Breakfast</div><div class="feature">Airport transfer available</div>
+</div>
+</div>
+<img src="images/site/exterior.jpg" alt="Entrance to Porto Music Guest House">
+</section>
+
+<section class="section rooms" id="rooms">
+<div class="rooms-head">
+<div><div class="kicker">02 · Rooms</div><h2>Four room styles.<br>Seven stays.</h2></div>
+<p>The categories below come from Porto Music Guest House’s current official website. Property images are presented as a separate room gallery so the concept does not imply an unverified category-to-photo match.</p>
+</div>
+
+<div class="type-grid">
+<article class="type"><span>01</span><h3>Standard Double / Twin</h3><p>Double bed or two singles · air conditioning · private shower · Wi-Fi · 40″ TV · safe · hair dryer.</p></article>
+<article class="type"><span>02</span><h3>Superior Double / Twin</h3><p>Double or twin setup · private shower · kitchenette with minibar, microwave, kettle and coffee machine.</p></article>
+<article class="type"><span>03</span><h3>Deluxe Double / Twin</h3><p>Double or twin setup · extra bed possible · private shower · kitchenette · 40″ TV.</p></article>
+<article class="type"><span>04</span><h3>Studio</h3><p>Double bed · extra bed possible · full kitchen · private bathroom · balcony overlooking Casa da Música.</p></article>
+</div>
+
+<div class="gallery">
+<figure><img src="images/site/room-a.jpg" alt="Guest room at Porto Music Guest House"><figcaption>Guest room</figcaption></figure>
+<figure><img src="images/site/room-b.jpg" alt="Guest room at Porto Music Guest House"><figcaption>Guest room</figcaption></figure>
+<figure><img src="images/site/room-c.jpg" alt="Guest room at Porto Music Guest House"><figcaption>Guest room</figcaption></figure>
+<figure><img src="images/site/room-d.jpg" alt="Guest room at Porto Music Guest House"><figcaption>Guest room</figcaption></figure>
+<figure><img src="images/site/hall.jpg" alt="Interior at Porto Music Guest House"><figcaption>Inside the house</figcaption></figure>
+</div>
+<div class="gallery-note">Official Porto Music Guest House photography. Exact room-category assignment is intentionally not implied.</div>
+</section>
+
+<section class="breakfast" id="breakfast">
+<img src="images/site/breakfast.jpg" alt="Breakfast at Porto Music Guest House">
+<div class="breakfast-copy">
+<div class="kicker">03 · Morning</div>
+<h2>Breakfast,<br>done slowly.</h2>
+<p>The guesthouse pairs its small scale with a more personal morning experience: breakfast inside the restored house or around the garden and courtyard spaces.</p>
+<div class="breakfast-list"><div>Breakfast service</div><div>Garden seating</div><div>Courtyard atmosphere</div><div>Small-house hospitality</div></div>
+</div>
+</section>
+
+<section class="section architecture">
+<div class="architecture-wrap">
+<div class="architecture-grid">
+<img src="images/site/stairs.jpg" alt="Restored staircase at Porto Music Guest House">
+<img src="images/site/courtyard.jpg" alt="Courtyard at Porto Music Guest House">
+<img src="images/site/hall.jpg" alt="Interior architecture at Porto Music Guest House">
+</div>
+<div>
+<div class="kicker">04 · The house itself</div>
+<h2>Architecture is<br>part of the stay.</h2>
+<p>The stair, moldings, proportions and small courtyard give Porto Music a stronger identity than a conventional hotel room. The direct website should sell that character instead of burying it under long blocks of text.</p>
+<div class="architecture-note">The strongest redesign angle is already inside the building: music, restoration, detail and a seven-room scale.</div>
+</div>
+</div>
+</section>
+
+<section class="location">
+<img src="images/site/room-b.jpg" alt="Room view near Casa da Música">
+<div class="location-copy">
+<div class="kicker">05 · Boavista</div>
+<h2>Casa da Música<br>across the street.</h2>
+<p>The property sits on Avenida da Boavista, directly opposite Casa da Música and close to Boavista Roundabout, Mercado do Bom Sucesso and metro connections into the historic centre.</p>
+</div>
+</section>
+
+<section class="section proof">
+<div class="kicker">06 · Guest proof</div>
+<div class="score">9.1<small>/10</small></div>
+<h2>The experience is already stronger than the current website suggests.</h2>
+<div class="proof-grid">
+<div><strong>9.7</strong><span>Staff</span></div><div><strong>9.6</strong><span>Cleanliness</span></div>
+<div><strong>9.5</strong><span>Comfort</span></div><div><strong>9.3</strong><span>Facilities</span></div>
+</div>
+</section>
+
+<section class="section contact" id="contact">
+<div class="contact-card">
+<div><div class="kicker">07 · Direct contact</div><h2>Stay opposite<br>Casa da Música.</h2></div>
+<div class="details">
+<div class="detail"><span>Address</span><p>Avenida da Boavista 601<br>4100-127 Porto, Portugal</p></div>
+<div class="detail"><span>Email</span><p><a href="mailto:info@portomusicguesthouse.com">info@portomusicguesthouse.com</a></p></div>
+<div class="detail"><span>Phone</span><p><a href="tel:+351966800600">+351 966 800 600</a></p></div>
+<div class="detail"><span>Local accommodation licence</span><p>48323/AL</p></div>
+<div class="contact-actions">
+<a class="button dark" href="mailto:info@portomusicguesthouse.com?subject=Availability%20at%20Porto%20Music%20Guest%20House">Email the guesthouse ↗</a>
+<a class="button outline" href="https://www.portomusicguesthouse.com/enindex.html" target="_blank">Current website ↗</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-logo">Porto Music</div>
+<p>Concept redesign created from publicly available information and official Porto Music Guest House imagery. Not affiliated with or commissioned by Porto Music Guest House.</p>
+<a href="#top">Back to top ↑</a>
+</footer>
+</body>
+</html>
